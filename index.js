@@ -1,6 +1,8 @@
 const express = require('express');
 const path = require('path');
 const rootPath = __dirname;
+const jsonfile = require('jsonfile');
+
 
 const app = express();
 
@@ -12,6 +14,13 @@ app.use('/', express.static(path.join(rootPath, '/public')));
 
 app.get('/', function(req, res) {
   return res.render('home');
+});
+
+app.get('/cassandra-table-details', function(req, res, next) {
+  jsonfile.readFile(path.join(rootPath, 'models/cassandraTableDetailsModel.json'), function(err, obj) {
+    if (err) return next(err);
+    return res.render('cassandraTableDetails', obj);
+  })
 });
 
 app.listen(app.get('port'), function() {

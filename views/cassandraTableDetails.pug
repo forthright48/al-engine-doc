@@ -1,0 +1,21 @@
+extends layout.pug
+
+block content
+  row.flex-items-xs-middle.text-xs-center
+    .col-xs
+      h1 AL Engine Documentation 1.0
+
+  row.flex-items-xs-middle.text-xs-center
+    .col-xs.markdown-body
+      table
+        thead
+          th Name
+          th Description
+          th Schema
+        tbody
+          each val in data
+            tr
+              td= val.a
+              td= val.b
+              td
+                pre= val.c
