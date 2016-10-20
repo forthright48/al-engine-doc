@@ -1,14 +1,8 @@
 {
-  "data": [
+    "data": [
     {
-      "a": "1",
-      "b": "2",
-      "c": "3"
-    },
-    {
-      "a": "11",
-      "b": "22",
-      "c": "33"
-    }
-  ]
+        "name": "usage_log",
+        "description": "asdf asdfasdf asdfasdf asdfasdf asdfasdf asdfasdf asdfasdf asdfasdf asdfasdf asdfasdf asdfasdf asdfasdf asdf",
+        "schema": "CREATE TABLE celica_al_engine_db.user_per_lesson_time (\r\n  user_email text,\r\n  lesson_id uuid,\r\n  start_time timestamp,\r\n  view_time_in_seconds bigint,\r\n  PRIMARY KEY ((user_email, lesson_id), start_time)\r\n) WITH CLUSTERING ORDER BY (start_time ASC);"
+    }]
 }

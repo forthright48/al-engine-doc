@@ -25,11 +25,11 @@ module.exports = {
   browsersync: ['./public/**', './views/**'],
   sassInclude: ['./public'],
   vendorInput: {
-    js: ['jquery'],
+    js: [],
     css: ['font-awesome'],
-    all: ['jquery', 'font-awesome']
+    all: ['font-awesome']
   },
   browserifyPath: ['./node_modules', './src'],
   rootPath: path.resolve(__dirname, '..'),
-  nodemonIgnore: ['./src', './public', './views']
+  nodemonIgnore: ['./src', './public', './views', './models/*.json']
 };

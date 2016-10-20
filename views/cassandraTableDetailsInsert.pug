@@ -1,0 +1,19 @@
+extends layout.pug
+
+block content
+  .row.flex-items-xs-middle
+    .offset-xs-2.col-xs-8
+      h2.text-xs-center Insert Table Details
+      form(method="post", action="/cassandra-table-details/insert")
+        .form-group
+          label Name
+          input.form-control(name='name')
+        .form-group
+          label Description
+          textarea.form-control(name='description')
+        .form-group
+          label Schema
+          textarea.form-control(name='schema')
+        .text-xs-center
+          button.btn.btn-primary(type="submit") Submit
+          a.btn.btn-danger.m-l-1(href='/cassandra-table-details') Cancel

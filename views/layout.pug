@@ -3,7 +3,7 @@ html(lang='en')
   head
     title AL Engine Doc
 
-    link(rel="stylesheet", href="scss/main.css", media="screen", title="no title", charset="utf-8")
+    link(rel="stylesheet", href="/scss/main.css", media="screen", title="no title", charset="utf-8")
 
     script(type='text/x-mathjax-config').
       MathJax.Hub.Config({
@@ -29,6 +29,8 @@ html(lang='en')
 
       include partials/footer.pug
 
+    script.
+      var flash = !{flash};
     script(src='/js/layout/index.min.js')
 
     block scripts
