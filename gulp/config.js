@@ -31,5 +31,5 @@ module.exports = {
   },
   browserifyPath: ['./node_modules', './src'],
   rootPath: path.resolve(__dirname, '..'),
-  nodemonIgnore: ['./src', './public', './views', './models/*.json']
+  nodemonIgnore: ['./src', './public', './views', './models']
 };

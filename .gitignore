@@ -1,4 +1,5 @@
 node_modules/*
+!node_modules/config
 public
 css_build
 client_module

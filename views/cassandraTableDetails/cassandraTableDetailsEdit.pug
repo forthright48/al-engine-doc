@@ -1,0 +1,32 @@
+extends ../layout.pug
+
+block content
+  .row.flex-items-xs-middle
+    .offset-xs-2.col-xs-8
+      h2.text-xs-center Insert Table Details
+      form(method="post", action=`/cassandra-table-details/edit/${name}`)
+        .form-group
+          label Name
+          input.form-control(name='name',value=name)
+        .form-group
+          label Description
+          textarea.form-control(name='description')= description
+        .form-group
+          label Schema
+          textarea.form-control(name='schema')= schema
+        .text-xs-center
+          button.btn.btn-primary(type="submit") Edit
+          a.btn.btn-secondary.m-l-1(href='/cassandra-table-details') Cancel
+          a.btn.btn-danger.m-l-1(data-toggle="modal", data-target="#deleteItem",href="#") Delete
+
+  #deleteItem.modal.fade(tabindex="-1")
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close(data-dismiss="modal") &times;
+          .modal-title
+            h3 Are you sure?
+        .modal-body.text-xs-center
+          a.btn.btn-danger(href=`/cassandra-table-details/delete/${name}`) Delete
+          button.btn.btn-secondary.m-l-1(data-dismiss="modal") Cancel
+        .modal-footer
